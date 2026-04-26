@@ -13,7 +13,7 @@ Mod is available at Modrinth and GitHub releases.
 Also nightly builds available as GitHub Actions artifacts: https://github.com/nosqd/cbcperipheral/actions
 
 ## Peripheral API
-To be done. But all API is really trivial.
+API Documentation is available here: https://github.com/nosqd/cbcperipheral/wiki/Peripherals
 
 ## Developing
 Mod uses nothing harder than Gradle. So you can fire up Intellij IDEA and start writing code.
