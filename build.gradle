@@ -168,7 +168,7 @@ modrinth {
     token = System.getenv("MODRINTH_TOKEN")
     projectId = "cbcperipheral"
     versionNumber = project.version
-    versionType = is_tag ? "release" : "alpha"
+    versionType = System.getenv("GITHUB_REF")?.startsWith("refs/tags/") ? "release" : "alpha"
     uploadFile = jar
     gameVersions = [project.minecraft_version]
     loaders = ["neoforge"]
