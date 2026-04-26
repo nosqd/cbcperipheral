@@ -1,0 +1,43 @@
+modLoader="javafml"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
+issueTrackerURL="https://github.com/nosqd/cbcperipheral/issues"
+
+[[mods]]
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+displayURL="https://github.com/nosqd/cbcperipheral"
+logoFile="cbcperipheral.png"
+authors="nosqd"
+description='''
+Adds CC Peripherals, code ported from VS: Addition, https://github.com/xiewuzhiying/VS-Addition/blob/1.20.1/main/common/src/main/kotlin/io/github/xiewuzhiying/vs_addition/compats/computercraft/peripheral/CannonMountMethods.kt
+'''
+
+[[dependencies.${mod_id}]]
+    modId="neoforge"
+    type="required"
+    versionRange="[${neo_version},)"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.${mod_id}]]
+    modId="minecraft"
+    type="required"
+    versionRange="${minecraft_version_range}"
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.cbcperipheral]]
+    modId = "computercraft"
+    type = "required"
+    versionRange = "[${minecraft_version}-${cc_version},)"
+    ordering = "NONE"
+    side = "BOTH"
+
+[[dependencies.cbcperipheral]]
+    modId = "createbigcannons"
+    type = "required"
+    versionRange = "[${cbc_version},)"
+    ordering = "NONE"
+    side = "BOTH"
