@@ -1,2 +1,5 @@
 # cbcperipheral
-> Adds CC Peripherals, code ported from VS: Addition
+> This mod adds CC: Tweaked peripherals to Create Big Cannons
+
+## Download
+
