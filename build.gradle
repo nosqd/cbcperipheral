@@ -3,13 +3,19 @@ plugins {
     id 'maven-publish'
     id 'net.neoforged.moddev' version '2.0.141'
     id 'idea'
+    id "com.modrinth.minotaur" version "2.+"
 }
 
 tasks.named('wrapper', Wrapper).configure {
     distributionType = Wrapper.DistributionType.BIN
 }
 
-version = mod_version
+def commitHash = providers.exec {
+    commandLine('git', 'log', '-1', '--format=%h')
+}.standardOutput.asText.get().trim()
+def isTag = System.getenv("GITHUB_REF")?.startsWith("refs/tags/")
+version = isTag ? mod_version : "${mod_version}+git-${commitHash}"
+
 group = mod_group_id
 
 sourceSets.main.resources {
@@ -155,5 +161,20 @@ idea {
     module {
         downloadSources = true
         downloadJavadoc = true
+    }
+}
+
+modrinth {
+    token = System.getenv("MODRINTH_TOKEN")
+    projectId = "cbcperipheral"
+    versionNumber = project.version
+    versionType = is_tag ? "release" : "alpha"
+    uploadFile = jar
+    gameVersions = [project.minecraft_version]
+    loaders = ["neoforge"]
+    dependencies {
+        required.project "cc-tweaked"
+        required.project "create-big-cannons"
+        required.project "create"
     }
 }
