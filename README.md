@@ -7,7 +7,7 @@
 ## Downloading
 Mod is available at Modrinth and GitHub releases.
 
-- Modrinth (might be still under review): https://modrinth.com/project/cbcperipheral
+- Modrinth (currently available only by link): https://modrinth.com/project/cbcperipheral
 - GitHub Releases: https://github.com/nosqd/cbcperipheral/releases
 
 Also nightly builds available as GitHub Actions artifacts: https://github.com/nosqd/cbcperipheral/actions
